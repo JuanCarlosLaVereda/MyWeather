@@ -58,10 +58,6 @@ public class MainActivity extends AppCompatActivity{
             startActivity(intent);
         });
 
-        tema.setOnClickListener(view -> {
-            ListPreference themePrefrence =
-        });
-
 /*        // Mostramos la barra de progreso y ejecutamos la llamada a la API
         showProgress();
         executeCall(this);*/
