@@ -57,29 +57,6 @@ public class MainActivity extends AppCompatActivity{
             intent.putExtra("Ciudad", ciudad);
             startActivity(intent);
         });
-
-/*        // Mostramos la barra de progreso y ejecutamos la llamada a la API
-        showProgress();
-        executeCall(this);*/
     }
 
-    // Realizamos la llamada y recogemos los datos en un objeto Root
-/*    @Override
-    public void doInBackground() {
-        root = Connector.getConector().get(Root.class,"&lat=39.5862518&lon=-0.5411163");
-    }*/
-
-    // Una vez ya se ha realizado la llamada, ocultamos la barra de progreso y presentamos los datos
-/*    @Override
-    public void doInUI() {
-        hideProgress();
-        txtView.setText(root.list.get(33).weather.get(0).description);
-        ImageDownloader.downloadImage(Parameters.ICON_URL_PRE + root.list.get(0).weather.get(0).icon + Parameters.ICON_URL_POST, imageView);
-
-        Date date = new Date((long)root.list.get(33).dt*1000);
-        SimpleDateFormat dateDayOfWeek = new SimpleDateFormat("E");
-        SimpleDateFormat dateDay = new SimpleDateFormat("EEE, d MMM yyyy HH:mm");
-        textViewDayOfWeek.setText(dateDayOfWeek.format(date));
-        textViewDay.setText(dateDay.format(date));
-    }*/
 }
