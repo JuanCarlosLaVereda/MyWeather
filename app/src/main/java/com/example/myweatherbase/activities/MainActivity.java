@@ -2,35 +2,29 @@ package com.example.myweatherbase.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.ListPreference;
+import android.preference.PreferenceFragment;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.myweatherbase.API.Connector;
 import com.example.myweatherbase.R;
 import com.example.myweatherbase.activities.model.Ciudades;
 import com.example.myweatherbase.activities.model.Root;
-import com.example.myweatherbase.base.BaseActivity;
-import com.example.myweatherbase.base.CallInterface;
-import com.example.myweatherbase.base.ImageDownloader;
-import com.example.myweatherbase.base.Parameters;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private ImageView imagenCiudad;
     private Spinner spinnerCiudades;
     private Button buttonPrevision;
     private Root root;
     private Ciudades ciudad;
+    private ImageButton tema;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         imagenCiudad = findViewById(R.id.imageCiudad);
         spinnerCiudades = findViewById(R.id.spinnerCiudades);
         buttonPrevision = findViewById(R.id.buttonPrevision);
+        imagenCiudad = findViewById(R.id.imageCiudad);
+        tema = findViewById(R.id.imageButtonLuna);
 
         ArrayAdapter<Ciudades> adaptadorSpinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Ciudades.values());
         spinnerCiudades.setAdapter(adaptadorSpinner);
@@ -60,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, ActivityCity.class);
             intent.putExtra("Ciudad", ciudad);
             startActivity(intent);
+        });
+
+        tema.setOnClickListener(view -> {
+            ListPreference themePrefrence =
         });
 
 /*        // Mostramos la barra de progreso y ejecutamos la llamada a la API

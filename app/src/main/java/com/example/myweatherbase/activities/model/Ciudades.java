@@ -24,6 +24,7 @@ public enum Ciudades implements Serializable, Listable {
         this.lat = lat;
         this.lon = lon;
         this.nombre = nombre;
+        this.image = image;
     }
 
     public String getNombre() {
